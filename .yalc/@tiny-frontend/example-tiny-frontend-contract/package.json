@@ -1,0 +1,37 @@
+{
+  "name": "@tiny-frontend/example-tiny-frontend-contract",
+  "tinyFrontendName": "ExampleTinyFrontend",
+  "version": "1.0.2",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "preview": "vite preview"
+  },
+  "types": "./dist/contract/src/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/example-tiny-frontend-contract.umd.js",
+  "module": "./dist/example-tiny-frontend-contract.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/example-tiny-frontend-contract.es.js",
+      "require": "./dist/example-tiny-frontend-contract.umd.js"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:@cazoo/eslint/react"
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off"
+    }
+  },
+  "dependencies": {
+    "@tiny-frontend/client": "^0.0.9"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "yalcSig": "205c9b7b019560152d9c028878eca6b6"
+}

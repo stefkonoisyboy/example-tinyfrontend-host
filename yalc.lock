@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@tiny-frontend/example-tiny-frontend-contract": {
+      "signature": "205c9b7b019560152d9c028878eca6b6",
+      "file": true
+    }
+  }
+}
