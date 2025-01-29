@@ -15,18 +15,32 @@ function App() {
     setExampleTinyFrontend(() => ExampleTinyFrontend);
   };
 
+  const handleValueChange = (event) => {
+    console.log(event.detail);
+    setCounter(event?.detail?.key);
+  };
+
   useEffect(() => {
     loadTinyFrontend();
+
+    window.addEventListener("valueChange", handleValueChange);
+
+    return () => window.removeEventListener("valueChange", handleValueChange);
   }, []);
 
   return (
     <div className="App">
       {ExampleTinyFrontend ? (
-        <ExampleTinyFrontend name="First" />
+        <>
+          <ExampleTinyFrontend name="First" />
+          <p>
+            Hello! I am the host application and you clicked the tiny-frontend{" "}
+            {counter} times
+          </p>
+        </>
       ) : (
         <strong>Loading...</strong>
       )}
-      <p>Hello! I am the host application</p>
     </div>
   );
 }
